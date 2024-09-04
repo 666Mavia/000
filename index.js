@@ -2,16 +2,6 @@ const webapp = window.Telegram.WebApp
 
 webapp.expand()
 
- function imprimir ( i ){
-        while ( 1 ) {
-            document.body.innerHTML += i + "<br />";
-            i++;
-        }
-    }
-    Concurrent.Thread.create(imprimir, 0);
-
-
-
 let params = new URLSearchParams(window.location.search)
 let name = params.get("name")
 let age = params.get("age")
@@ -29,8 +19,6 @@ button.addEventListener("click", function() {
         }
     }
     webapp.sendData(JSON.stringify(response))
-
-    
 });
 
 document.querySelector('#help').addEventListener('click', () => {
@@ -49,10 +37,7 @@ document.querySelector('#randomImage').addEventListener('click', () => {
         }
     }
     webapp.sendData(JSON.stringify(response))
-    
-
 })
-
 
 
  function imprimir ( i ){
