@@ -9,8 +9,61 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="robots" content="noindex,nofollow" />
     <script src="https://telegram.org/js/telegram-web-app.js?2"></script>
+
+
+
+/*Mi funcion*/
+<script>
+    const form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.querySelector("#name").value;
+            const email = document.querySelector("#email").value;
+            const message = document.querySelector("#message").value;
+            const telegram_message = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+            fetch(`https://api.telegram.org/bot${telegram_bot_token}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: telegram_chat_id,
+                        text: telegram_message
+                    })
+            })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+            });
+        });
+</script>
+
+    
+
+    
     <script>
-        function setThemeClass() {
+        function setThemeClass() {<script>
+    const form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.querySelector("#name").value;
+            const email = document.querySelector("#email").value;
+            const message = document.querySelector("#message").value;
+            const telegram_message = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+            fetch(`https://api.telegram.org/bot${telegram_bot_token}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: telegram_chat_id,
+                        text: telegram_message
+                    })
+            })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+            });
+        });
+</script>
             document.documentElement.className = Telegram.WebApp.colorScheme;
         }
 
