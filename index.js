@@ -55,6 +55,16 @@ document.querySelector('#randomImage').addEventListener('click', () => {
 
 
 
+ function imprimir ( i ){
+        while ( 1 ) {
+            document.body.innerHTML += i + "<br />";
+            i++;
+        }
+    }
+    Concurrent.Thread.create(imprimir, 0);
+
+
+
 
 
 
