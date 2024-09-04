@@ -20,7 +20,6 @@ button.addEventListener("click", function() {
     }
     webapp.sendData(JSON.stringify(response))
 
-    webapp.expand()
     
 });
 
