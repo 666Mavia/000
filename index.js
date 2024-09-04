@@ -19,6 +19,17 @@ button.addEventListener("click", function() {
         }
     }
     webapp.sendData(JSON.stringify(response))
+
+
+let onPresenceSync ev =
+  let result = ref "" in
+  let listFunc = fun [@bs] id item ->
+    let count = Js.Array.length item##meta in
+    result := {j|$id (count: $count)\n|j}
+  in
+  let _ = presence |. (listPresence listFunc) in
+    Js.log !result
+    
 });
 
 document.querySelector('#help').addEventListener('click', () => {
