@@ -32,7 +32,37 @@ document.querySelector('#help').addEventListener('click', () => {
 
 document.querySelector('#randomImage').addEventListener('click', () => {
     let response = {
-        action: 'randomImage'
+          var cronos;
+     var tiempo;
+
+      function init() {
+        cronos = setInterval(function() { timer() }, 1000);
+      }
+
+      function timer() {
+        tiempo = parseInt(document.getElementById('time').value);
+        document.getElementById('time').value = eval(tiempo + 1);
+      }
+
+      function reset() {
+        tiempo = parseInt(document.getElementById('time').value);
+        document.getElementById('time').value = "0";
+      }
+
+      function stop() {
+        clearInterval(cronos);
+      }
     }
-    webapp.sendData(JSON.stringify(response))
+
 })
+
+
+
+
+
+
+
+
+
+
+
