@@ -21,8 +21,6 @@ button.addEventListener("click", function() {
     webapp.sendData(JSON.stringify(response))
 });
 
-webapp.expand()
-
 /*document.querySelector('#help').addEventListener('click', () => {
     let response = {
         action: 'help'
