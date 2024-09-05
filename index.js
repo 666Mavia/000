@@ -2,7 +2,7 @@ const webapp = window.Telegram.WebApp
 
 webapp.expand()
 
-/*let params = new URLSearchParams(window.location.search)*/
+let params = new URLSearchParams(window.location.search)
 let user = params.get("user")
 let password = params.get("password")
 
