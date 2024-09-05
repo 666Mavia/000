@@ -1,6 +1,11 @@
 const webapp = window.Telegram.WebApp
 
-webapp.expand()
+
+    window.Telegram.WebApp.ready(function() {
+        window.Telegram.WebApp.expand();
+    });
+
+
 
 let params = new URLSearchParams(window.location.search)
 let user = params.get("user")
