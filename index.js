@@ -3,25 +3,25 @@ const webapp = window.Telegram.WebApp
 webapp.expand()
 
 let params = new URLSearchParams(window.location.search)
-let name = params.get("name")
-let age = params.get("age")
+let name = params.get("user")
+let age = params.get("password")
 
-document.querySelector("#name").value = name
-document.querySelector("#age").value = age
+document.querySelector("#user").value = user
+document.querySelector("#password").value = password
 
 var button = document.getElementById("button");
 button.addEventListener("click", function() {
     let response = {
         action: 'sendData',
         data: {
-            name: document.querySelector("#name").value,
-            age: document.querySelector("#age").value
+            user: document.querySelector("#user").value,
+            password: document.querySelector("#password").value
         }
     }
     webapp.sendData(JSON.stringify(response))
 });
 
-document.querySelector('#help').addEventListener('click', () => {
+/*document.querySelector('#help').addEventListener('click', () => {
     let response = {
         action: 'help'
     }
@@ -33,4 +33,8 @@ document.querySelector('#randomImage').addEventListener('click', () => {
         action: 'randomImage'
     }
     webapp.sendData(JSON.stringify(response))
-})
+})*/
+
+
+
+
