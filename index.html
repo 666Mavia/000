@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mavia Bot</title>
-    <link rel="stylesheet" href="./index.css?v=5">
+<html ng-app="custom-webapp-ui" lang="en" style="background-color: white">
+  <head>
+    <!-- Load the Telegram Library -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    
-</head>
-<body>
-
-    <div class="wrapper">
-
-        <div class="box">
-            <h1>Mavia Bot</h1>
-            <label for="user">User:</label>
-            <input type="text" id="user" value="" placeholder="User">
-            <label for="password">Password:</label>
-            <input type="text" id="password" value="" placeholder="Password">
-            <button id="button">login</button>    
-        </div>
-        
-        <!--div class="menus">
-            <button id="help">Help</button>
-            <button id="randomImage">Random Image</button>
-    </div-->
-
+    <!--Load the AngularJS Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      //initialize the AngularJS stuff...
+      angular.module("custom-webapp-ui", []).controller('CustomUIController', function CustomUIController($scope) {
+        //init our slider values that we will display
+        $scope.foods = [
+                { name: "fruits", value: 5 },
+                { name: "vegetables", value: 5 },
+                { name: "meat", value: 5 },
+                { name: "dairy", value: 5 }
+            ];
+        //initialize the button
+        const mainButton = window.Telegram.WebApp.MainButton;
+        mainButton.text = "Save Preferences";
+        mainButton.enable();
+        mainButton.show();
+        // and make it send the "foods" object (as JSON string) back to the bot
+        mainButton.onClick(function(){
+          window.Telegram.WebApp.sendData(JSON.stringify($scope.foods));
+        })
+      });
+    </script>
+  </head>
+  <body ng-controller="CustomUIController">
+    <div ng-repeat="food in foods">
+      <div style="width: 100px; display: inline-block">{{food.name}} : {{food.value}}</div>
+      <input style="display: inline-block" type="range" min="1" max="10" ng-model="food.value" value="{{food.value}}">
     </div>
-    
-    
-    <script src="./index.js?v=6"></script>
-    
-</body>
+  </body>
 </html>
