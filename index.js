@@ -23,7 +23,7 @@ button.addEventListener("click", function() {
             password: document.querySelector("#password").value
         }
     }
-    webapp.sendData(JSON.stringify(response))
+   // webapp.sendData(JSON.stringify(response))
 });
 
 /*document.querySelector('#help').addEventListener('click', () => {
