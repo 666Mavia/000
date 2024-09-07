@@ -1,6 +1,6 @@
 // Botón para regresar a la ventana principal
 document.getElementById('back').addEventListener('click', function () {
-    window.close();
+    window.location.replace('index.html');
 });
 
 // Botón para eliminar el historial
