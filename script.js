@@ -38,7 +38,8 @@ function updatePlayerSlots() {
 
 // Función para abrir la ventana del historial
 document.getElementById('viewHistory').addEventListener('click', function () {
-    window.open('historial.html', '_blank');
+   // window.open('historial.html', '_blank');
+    window.location.replace('historial.html');
 });
 
 document.getElementById('finalize').addEventListener('click', function () {
@@ -228,5 +229,8 @@ class LoadImages{
 new LoadImages();
 
 
-
-
+//Incluir otro archivo HTML en un archivo HTML
+//<div id="includedContent"></div>
+//$(function(){
+//    $("#includedContent").load("b.html");
+//});
