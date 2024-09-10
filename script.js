@@ -1,6 +1,6 @@
 //Funcion secreta A para actualizar la lista de jugadores
 document.getElementById('secret_key_a').addEventListener('click', function () {
-window.updatePlayerList();
+window.updatePlayerList(false);
 });
 
 
