@@ -45,7 +45,7 @@ playerItem.innerHTML=`
 `;
 playerListElement.appendChild(playerItem);
 if(recargar_web){
-location.reload(true);
+window.location.reload(true);
 alert('Web Actualizada!'); 
 }
 });
