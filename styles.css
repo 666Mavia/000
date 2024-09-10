@@ -1,0 +1,252 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+font-family: Arial, sans-serif;
+background-color: #2D0069;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+}
+/******************************************************/
+/******************************************************/
+/******************************************************/
+/*ENCABEZADO CON LOS 2 AVATARES*/
+.header {
+width: 100%;
+height: 33vh; /* Puedes ajustar el valor según la altura que prefieras */
+background-image: url('header-background.png');
+background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+background-position: center; /* Centra la imagen de fondo */
+background-repeat: no-repeat; /* Evita que la imagen se repita */
+display: flex;
+justify-content: center; /* Centra horizontalmente el contenido dentro del contenedor */
+align-items: center; /* Centra verticalmente el contenido dentro del contenedor */
+position: relative;
+}
+.image-container {
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.player-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+.player-slot{
+width: 150%; /* Aumenta el ancho un 50% */
+height: 150%; /* Aumenta la altura un 50% */
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 50%; /* Hace que la imagen tenga forma circular */
+overflow: hidden; /* Asegura que la imagen se recorte correctamente en forma de círculo */
+border: 4px solid #ffffff; /* Borde blanco para contrastar con fondo negro */
+}
+.middle-icon{
+width: 10%;
+}
+.vs-icon{
+width: 100%;
+height: auto;
+}
+.player-name{
+margin-top: 10px;
+font-size: 1.2rem;
+text-align: center;
+}
+/******************************************************/
+/******************************************************/
+/******************************************************/
+.player-list {
+    width: 100%;
+    margin-top: 20px;
+    max-height: 40vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.player img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.player span {
+    margin-right: 20px;
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4e4e9f;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4e4e9f;
+}
+
+/* Optimización para móviles */
+@media (max-width: 768px) {
+    .player-slot {
+        width: 45%;
+        height: 100px;
+    }
+
+    .middle-icon {
+        width: 10%;
+        opacity:0;
+    }
+
+    .player img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#back, #clear-history {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back:hover, #clear-history:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Estilos del login modal */
+.login-modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login-content {
+    background-color: #1c1c80;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 100%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.login-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.login-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4e4e9f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-content button:hover {
+    background-color: #7e7eba;
+}
+
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+

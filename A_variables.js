@@ -1,0 +1,2 @@
+var selectedPlayers=[];
+var betData={};
