@@ -14,7 +14,7 @@ function fetchPlayers() {
         .then(script => {
         // Evalúa el script para obtener la nueva lista de jugadores
         eval(script);
-        updatePlayerList(); // Función que actualiza la lista de jugadores
+        updatePlayerList(true); // Función que actualiza la lista de jugadores
     });
 }
 
@@ -33,7 +33,7 @@ function checkForUpdates() {
 // Verifica actualizaciones cada 10 segundos
 setInterval(checkForUpdates, 10000);
 
-function updatePlayerList(){
+function updatePlayerList(recargar_web){
 const playerListElement=document.querySelector('#player-list'); // Asegúrate de tener un contenedor para la lista de jugadores
 playerListElement.innerHTML=''; // Limpiar la lista actual
 window.selectedPlayers.forEach(player=>{
@@ -44,6 +44,10 @@ playerItem.innerHTML=`
 <span>${player.name}</span>
 `;
 playerListElement.appendChild(playerItem);
+if(recargar_web){
+location.reload();
+alert('Web Actualizada!'); 
+}
 });
 }
 
