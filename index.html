@@ -8,6 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Batalla de Jugadores</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles_barraDeProgreso.css">
+<link rel="stylesheet" href="styles_dialogoSubmit.css">
+<link rel="stylesheet" href="styles_dialogoAlertaSave.css">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <!--------------------------------------------------------->
@@ -45,7 +48,7 @@
 <div class="player" data-id="1">
 <input type="checkbox" class="select-player">
 <img  id="player_1_img" src="" alt="player 1" class="player-icon">
-<span id="player_1_nombre">Nombre Usuario 1</span>
+<span id="player_1_nombre">Name</span>
 <span id="player_1_ganadas" >W: soon</span>
 <span id="player_1_perdidas">L: soon</span>
 <span id="player_1_promedio">%: soon</span>
@@ -56,7 +59,7 @@
 <div class="player" data-id="2">
 <input type="checkbox" class="select-player">
 <img  id="player_2_img" src="" alt="player 2" class="player-icon">
-<span id="player_2_nombre">Nombre Usuario 2</span>
+<span id="player_2_nombre">Name</span>
 <span id="player_2_ganadas" >W: soon</span>
 <span id="player_2_perdidas">L: soon</span>
 <span id="player_2_promedio">%: soon</span>
@@ -67,7 +70,7 @@
 <div class="player" data-id="3">
 <input type="checkbox" class="select-player">
 <img  id="player_3_img" src="" alt="player 3" class="player-icon">
-<span id="player_3_nombre">Nombre Usuario 3</span>
+<span id="player_3_nombre">Name</span>
 <span id="player_3_ganadas" >W: soon</span>
 <span id="player_3_perdidas">L: soon</span>
 <span id="player_3_promedio">%: soon</span>
@@ -78,7 +81,7 @@
 <div class="player" data-id="4">
 <input type="checkbox" class="select-player">
 <img  id="player_4_img" src="" alt="player 4" class="player-icon">
-<span id="player_4_nombre">Nombre Usuario 2</span>
+<span id="player_4_nombre">Name</span>
 <span id="player_4_ganadas" >W: soon</span>
 <span id="player_4_perdidas">L: soon</span>
 <span id="player_4_promedio">%: soon</span>
@@ -89,7 +92,7 @@
 <div class="player" data-id="5">
 <input type="checkbox" class="select-player">
 <img  id="player_5_img" src="" alt="player 5" class="player-icon">
-<span id="player_5_nombre">Nombre Usuario 5</span>
+<span id="player_5_nombre">Name</span>
 <span id="player_5_ganadas" >W: soon</span>
 <span id="player_5_perdidas">L: soon</span>
 <span id="player_5_promedio">%: soon</span>
@@ -100,9 +103,9 @@
 <!--------------------------------------------------------->
 <!--------------------------------------------------------->
 <div class="buttons">
-<button id="finalize">Finalizar</button>
-<button id="saveSelection">Guardar</button>
-<button id="viewHistory">Ver Historial</button>
+<button id="finalize">Submit</button>
+<button id="saveSelection">Save</button>
+<button id="viewHistory">History</button>
 </div>
 <!--------------------------------------------------------->
 <!--------------------------------------------------------->
@@ -142,6 +145,40 @@
 <!--------------------------------------------------------->
 <!--------------------------------------------------------->
 <!--------------------------------------------------------->
+<div id="miModal">
+<div id="miContenido">
+<h2>Update in progress...</h2>
+<div class="barraProgreso">
+<div class="barraProgresoAvance" id="progresoTexto">0%</div>
+</div>
+</div>
+</div>
+<!--------------------------------------------------------->
+<!--------------------------------------------------------->
+<!--------------------------------------------------------->
+<div id="dialogoModal">
+<div id="dialogoContenido">
+<p>Do you want to send your bets to the server?</p>
+<div id="dialogoBotones">
+<button class="boton botonAceptar" id="aceptar">Send</button>
+<button class="boton botonCancelar" id="cancelar">Delete</button>
+</div>
+</div>
+</div>
+<!--------------------------------------------------------->
+<!--------------------------------------------------------->
+<!--------------------------------------------------------->
+<div id="dialogoModal_AlertaSave">
+<div id="dialogoContenido_AlertaSave">
+<p>You must select two players first.</p>
+<div id="dialogoBotones_AlertaSave">
+<button class="boton botonAceptar" id="aceptar_AlertaSave">Ok</button>
+</div>
+</div>
+</div>
+<!--------------------------------------------------------->
+<!--------------------------------------------------------->
+<!--------------------------------------------------------->
 <script src="players_top10.js"></script>
 <script src="A_variables.js"></script>
 <script src="A_update_a.js"></script>
@@ -149,6 +186,7 @@
 <script src="A_updatePlayerSlots.js"></script>
 <script src="A_savePlayerPair.js"></script>
 <script src="A_handlePlayerSelection.js"></script>
+<script src="historial.js"></script>
 <script src="script.js"></script>
 <!--------------------------------------------------------->
 <!--------------------------------------------------------->

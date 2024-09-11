@@ -31,88 +31,72 @@ z=${encodeURIComponent(z)}
 
 // Botón para eliminar el historial
 document.getElementById('clear-history').addEventListener('click', function () {
-    // Confirmación para eliminar el historial
-    const confirmation = confirm("¿Estás seguro de que deseas eliminar el historial?");
-
-    if (confirmation) {
-        // Eliminar el historial de localStorage
-        localStorage.removeItem('playerHistory');
-
-        // Limpiar la lista en la interfaz
-        const historyList = document.querySelector('.history-list');
-        historyList.innerHTML = '<p>No hay historial guardado.</p>';
-
-        alert("Historial eliminado correctamente.");
-    }
+borrar_historial();
 });
-
-
-
-
-
 
 // Cargar el historial desde localStorage
 document.addEventListener('DOMContentLoaded', function () {
-    const historyList = document.querySelector('.history-list');
-    const history = JSON.parse(localStorage.getItem('playerHistory')) || [];
+const historyList=document.querySelector('.history-list');
+const history = JSON.parse(localStorage.getItem('playerHistory')) || [];
+if(history.length === 0) {
+historyList.innerHTML = '<p>No hay historial guardado.</p>';
+}else{
+history.forEach((entry, index) => {
+const player1 = entry.players[0];
+const player2 = entry.players[1];
+const winner = entry.winner;
+const betAmount = entry.betAmount;
+const user = entry.user;
+const historyItem = document.createElement('div');
+historyItem.classList.add('history-item');
+historyItem.innerHTML = `
+<p>Pareja ${index + 1}:</p>
+<div class="players">
+<div class="player">
+<img src="${player1.icon}" alt="${player1.name}">
+<span>${player1.name}</span>
+</div>
+<span>vs</span>
+<div class="player">
+<img src="${player2.icon}" alt="${player2.name}">
+<span>${player2.name}</span>
+</div>
+</div>
+<p>Ganador: ${winner}, Apuesta: ${betAmount} monedas</p>
+<p>Guardado por: ${user}</p>
+`;
+historyList.appendChild(historyItem);
+});
+}
+});
 
-    if (history.length === 0) {
-        historyList.innerHTML = '<p>No hay historial guardado.</p>';
-    } else {
-        history.forEach((entry, index) => {
-            const player1 = entry.players[0];
-            const player2 = entry.players[1];
-            const winner = entry.winner;
-            const betAmount = entry.betAmount;
-            const user = entry.user;
-            const historyItem = document.createElement('div');
-            historyItem.classList.add('history-item');
-            historyItem.innerHTML = `
-        <p>Pareja ${index + 1}:</p>
-        <div class="players">
-          <div class="player">
-            <img src="${player1.icon}" alt="${player1.name}">
-            <span>${player1.name}</span>
-          </div>
-          <span>vs</span>
-          <div class="player">
-            <img src="${player2.icon}" alt="${player2.name}">
-            <span>${player2.name}</span>
-          </div>
-        </div>
-        <p>Ganador: ${winner}, Apuesta: ${betAmount} monedas</p>
-        <p>Guardado por: ${user}</p>
-      `;
-            historyList.appendChild(historyItem);
-        });
-    }
+window.addEventListener('load',function(){
+// Obtener parámetros de la URL
+const params = new URLSearchParams(window.location.search);
+const caso = params.get('caso'); // 'param' es el nombre del parámetro que pasaste
+//params.set('caso',null);
+//// Si deseas actualizar la URL en el navegador
+//window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+if(caso==null){}
+if(caso==3){
+//window.A_update_a_final();
+window.a1=params.get('a1');window.b1=params.get('b1');window.c1=params.get('c1');
+window.a2=params.get('a2');window.b2=params.get('b2');window.c2=params.get('c2');
+window.a3=params.get('a3');window.b3=params.get('b3');window.c3=params.get('c3');
+window.a4=params.get('a4');window.b4=params.get('b4');window.c4=params.get('c4');
+window.a5=params.get('a5');window.b5=params.get('b5');window.c5=params.get('c5');
+window.y=params.get('y');window.z=params.get('z');
+document.getElementById('id_log').innerHTML='script.load:'+window.a1;
+}
 });
 
 
-window.addEventListener('load', function() {
-    // Obtener parámetros de la URL
-    const params = new URLSearchParams(window.location.search);
-    const caso = params.get('caso'); // 'param' es el nombre del parámetro que pasaste
-    //params.set('caso',null);
-    //// Si deseas actualizar la URL en el navegador
-    //window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
-
-//document.getElementById('id_log').innerHTML=`Valor del parámetro: ${caso}`;
-    if(caso==null){
-
-    }
-    if(caso==3){
-        //window.A_update_a_final();
-        window.a1=params.get('a1');window.b1=params.get('b1');window.c1=params.get('c1');
-        window.a2=params.get('a2');window.b2=params.get('b2');window.c2=params.get('c2');
-        window.a3=params.get('a3');window.b3=params.get('b3');window.c3=params.get('c3');
-        window.a4=params.get('a4');window.b4=params.get('b4');window.c4=params.get('c4');
-        window.a5=params.get('a5');window.b5=params.get('b5');window.c5=params.get('c5');
-        window.y=params.get('y');window.z=params.get('z');
-        document.getElementById('id_log').innerHTML='script.load:'+window.a1;
-    }
-
-
-
-});
+function borrar_historial(){
+// Eliminar el historial de localStorage
+localStorage.removeItem('playerHistory');
+// Limpiar la lista en la interfaz
+const historyList = document.querySelector('.history-list');
+historyList.innerHTML = '<p>No hay historial guardado.</p>';
+alert("Historial eliminado correctamente.");
+}
 

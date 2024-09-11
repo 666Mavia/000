@@ -130,7 +130,7 @@ button:hover {
     }
 
     .buttons {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
@@ -147,7 +147,7 @@ button:hover {
     gap: 10px;
 }
 
-#back, #clear-history {
+#back, #clear-history ,#finalize,#saveSelection,#viewHistory{
     padding: 10px 20px;
     background-color: #007bff;
     color: white;

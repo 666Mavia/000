@@ -139,6 +139,7 @@ variableDinamica=variableDinamica_real;
 ///////////////////////////////
 if(variableDinamica==1){
 readFile(variableDinamica);
+window.reiniciarProgreso();
 }
 if(variableDinamica==2){
 localStorage.clear();
