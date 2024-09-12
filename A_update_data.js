@@ -99,6 +99,12 @@ break;
 // Puedes agregar más casos si tienes más jugadores
 }
 });
+// Forzar el re-renderizado de la lista
+requestAnimationFrame(() => {
+players.style.display = 'none'; // Oculta temporalmente
+players.offsetHeight; // Forzar recalculo
+players.style.display = ''; // Mostrar nuevamente
+});
 }
 /////////////////////////////////////
 function readFile(caso){
