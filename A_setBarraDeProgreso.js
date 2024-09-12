@@ -28,5 +28,7 @@ window.tiempoRestante = 20; // Reiniciamos el tiempo restante
 window.progreso = 0; // Reiniciamos el progreso visual
 document.getElementById("progresoTexto").style.width = '0%';
 document.getElementById("progresoTexto").innerHTML = '0%';
-//setBarraDeProgreso(-1)// Volvemos a iniciar el progreso
+if(document.getElementById("barraDeProgreso_Modal").style.display=="none"){
+setBarraDeProgreso(-1)// Volvemos a iniciar el progreso
+}
 }
