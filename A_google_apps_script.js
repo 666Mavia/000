@@ -1,7 +1,5 @@
 const url_getData ='https://script.google.com/macros/s/AKfycbweqU3DpAdbtoi92SzVfvvda0-gbMi_d9asRByqKlSyqUxpTU5FVRHjuiTRpTxUtYCq/exec';
 const url_getUpdate ='https://script.google.com/macros/s/AKfycbzhVGJIVCZGV1UDhsxt6qR3F9_aVvGgF_mErFgqsgb9Zfd_4G_SiW-X-Z0SbfQwOlmjVA/exec';
-const url_setUpdate ='https://script.google.com/macros/s/AKfycbxEF8mkQIEB_d0DPV1jjA95rxuJ6ReL56bG2NQR06BvYW2rAL_kc4hcXVnyn9of1Dpk/exec';
-const url_setData ='https://script.google.com/macros/s/AKfycbwIsO4GV_ZaPW8BCIZS3jB-eQhk_MDIghfKg9ZSm5-SMLLjRf6ylaWR4XuGzkCVvXXu/exec';
 ////////////////////////
 var outputMessages=''; // Variable para concatenar todos los mensajes
 var conteo=0;
