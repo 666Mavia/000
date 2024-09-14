@@ -11,16 +11,8 @@ const delay = 1000;
 
 
 ////////////////////////////////
-async function google_setData(data){
-return await set(url_setData,data);
-}
-////////////////////////////////
 async function google_getData(){
 return await get(url_getData);
-}
-////////////////////////////////
-async function google_setUpdate(){
-return await set(url_setUpdate, update);
 }
 ////////////////////////////////
 async function google_getUpdate(){
