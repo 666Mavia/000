@@ -16,8 +16,8 @@ window.close();
 }else{
 try{
 // Define una función asíncrona para manejar la operación
-//const resultado = await window.google_getData(); // Espera a que runFunctions complete
-//document.getElementById('id_log').innerText = resultado; // Actualiza el div con el resultado
+const resultado = await window.google_getDatos(); // Espera a que runFunctions complete
+document.getElementById('id_log').innerText = resultado; // Actualiza el div con el resultado
 //document.getElementById('id_log').innerText = window.outputMessages; // Comentado, ya que parece innecesario
 // Mostramos el diálogo modal
 document.getElementById('dialogoModal').style.display = 'flex';

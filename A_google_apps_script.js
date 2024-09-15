@@ -9,7 +9,6 @@ const delay = 1000;
 ///////////////////////////
 
 
-
 ////////////////////////////////
 async function google_getData(){
 return await get(url_getData);
@@ -20,7 +19,6 @@ const update=await get(url_getUpdate);
 return limpiar(update);
 }
 ////////////////////////////////
-
 
 
 
